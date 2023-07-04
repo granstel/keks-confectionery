@@ -1,5 +1,6 @@
 import ReviewForm from '../../components/review-form/review-form';
-import ReviewsList from "../../components/reviews-list/reviews-list";
+import ReviewsList from '../../components/reviews-list/reviews-list';
+import Footer from '../../components/footer/footer';
 
 export default function Product(): JSX.Element {
   return (
@@ -58,6 +59,7 @@ export default function Product(): JSX.Element {
       </section>
       <ReviewForm />
       <ReviewsList />
+      <Footer />
     </>
   );
 }
