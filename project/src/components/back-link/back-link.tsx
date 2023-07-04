@@ -1,4 +1,4 @@
-export default function backLink():JSX.Element {
+export default function BackLink():JSX.Element {
   return (
     <div className="back-link">
       <div className="container"><a className="back-link__link" href="#">Назад
