@@ -1,5 +1,5 @@
-import Header from "../../components/header/header";
-import Product from "../../components/product/product";
+import Header from '../../components/header/header';
+import Product from '../../components/product/product';
 
 export default function Main(): JSX.Element {
   return (

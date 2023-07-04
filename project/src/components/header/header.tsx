@@ -1,11 +1,11 @@
-﻿export default function Header():JSX.Element {
+export default function Header():JSX.Element {
   return (
     <header className="header header--authorized">
       <div className="container">
         <div className="header__inner">
-            <span className="header__logo">
-              <img src="img/svg/logo.svg" width="170" height="69" alt="Кондитерская кекс" />
-            </span>
+          <span className="header__logo">
+            <img src="img/svg/logo.svg" width="170" height="69" alt="Кондитерская кекс" />
+          </span>
           <div className="header__user-info-wrap">
             <div className="header__user-info">
               <div className="header__user-avatar">
@@ -19,11 +19,11 @@
           </div>
           <div className="header__buttons">
             <a className="header__favourite" href="/favorites">
-                <span className="header__favourite-icon">
-                  <svg width="33" height="29" aria-hidden="true">
-                    <use xlinkHref="#icon-favourite"></use>
-                  </svg>
-                </span><span className="header__favourite-number">2</span><span className="visually-hidden">Избранное</span>
+              <span className="header__favourite-icon">
+                <svg width="33" height="29" aria-hidden="true">
+                  <use xlinkHref="#icon-favourite"></use>
+                </svg>
+              </span><span className="header__favourite-number">2</span><span className="visually-hidden">Избранное</span>
             </a>
             <div className="header__buttons-authorized">
               <div className="header__btn">
