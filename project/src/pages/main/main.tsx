@@ -1,5 +1,5 @@
 import Header from '../../components/header/header';
-import Product from '../../components/product/product';
+import ProductCard from '../../components/product/product-card';
 import Review from '../../components/review/review';
 
 export default function Main(): JSX.Element {
@@ -26,13 +26,13 @@ export default function Main(): JSX.Element {
             <h2 className="random-main__title">кексы</h2>
             <ul className="random-main__list">
               <li className="random-main__item">
-                <Product />
+                <ProductCard />
               </li>
               <li className="random-main__item">
-                <Product />
+                <ProductCard />
               </li>
               <li className="random-main__item">
-                <Product />
+                <ProductCard />
               </li>
               <li className="random-main__item">
                 <a className="random-main__link" href="/keksses">

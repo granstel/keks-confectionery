@@ -1,4 +1,4 @@
-export default function Product(): JSX.Element {
+export default function ProductCard(): JSX.Element {
   return (
     <div className="card-item">
       <a className="card-item__img-link" href="/newcoming">
