@@ -2,7 +2,7 @@ import Header from "../../components/header/header";
 
 export default function Main(): JSX.Element {
   return (
-    <div className="wrapper">
+    <>
       <Header />
       <main>
         <div className="hero">
@@ -201,6 +201,6 @@ export default function Main(): JSX.Element {
           </div>
         </div>
       </footer>
-    </div>
+    </>
   );
 }
