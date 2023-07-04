@@ -1,4 +1,4 @@
-﻿export default function Review():JSX.Element {
+export default function Review():JSX.Element {
   return (
     <div className="review">
       <div className="review__inner-wrapper review__inner-wrapper--border">
