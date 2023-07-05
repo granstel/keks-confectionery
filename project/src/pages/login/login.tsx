@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { AppRoute } from "../../const";
+import { Link } from 'react-router-dom';
+import { AppRoute } from '../../const';
 
 export default function Login(): JSX.Element {
   return (
@@ -33,7 +33,8 @@ export default function Login(): JSX.Element {
             <p className="login-page__text-wrap">Ещё не зарегистрированы?
               <Link className="login-page__link" to={AppRoute.Register}>
                 Создайте
-              </Link> аккаунт прямо сейчас.</p>
+              </Link> аккаунт прямо сейчас.
+            </p>
           </div>
         </div>
       </section>

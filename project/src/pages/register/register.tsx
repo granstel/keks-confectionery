@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { AppRoute } from "../../const";
+import { Link } from 'react-router-dom';
+import { AppRoute } from '../../const';
 
 export default function Register(): JSX.Element {
   return (
@@ -43,7 +43,8 @@ export default function Register(): JSX.Element {
             <p className="register-page__text-wrap">Уже зарегистрированы?
               <Link className="register-page__link" to={AppRoute.Login}>
                 Войдите
-              </Link> в свой аккаунт.</p>
+              </Link> в свой аккаунт.
+            </p>
           </div>
         </div>
       </section>
