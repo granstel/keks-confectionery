@@ -2,6 +2,8 @@ import Header from '../../components/header/header';
 import ProductCard from '../../components/product/product-card';
 import Review from '../../components/review/review';
 import Footer from '../../components/footer/footer';
+import { AppRoute } from '../../const';
+import { Link } from 'react-router-dom';
 
 export default function Main(): JSX.Element {
   return (
@@ -17,7 +19,9 @@ export default function Main(): JSX.Element {
               <p className="hero__subtitle">Твоя пушистая кондитерская</p>
               <p className="hero__title">КЕКС</p>
               <div className="hero__button-wrapper">
-                <a className="btn" href="catalog-page.html">Скорее смотреть</a>
+                <Link className="btn" to={AppRoute.Catalog}>
+                  Скорее смотреть
+                </Link>
               </div>
             </div>
           </div>
@@ -36,7 +40,7 @@ export default function Main(): JSX.Element {
                 <ProductCard />
               </li>
               <li className="random-main__item">
-                <a className="random-main__link" href="/keksses">
+                <Link className="random-main__link" to={AppRoute.Catalog}>
                   <div className="random-main__icon-wrapper">
                     <div className="random-main__icon">
                       <svg width="120" height="130" aria-hidden="true">
@@ -45,7 +49,7 @@ export default function Main(): JSX.Element {
                     </div>
                   </div>
                   <h3 className="random-main__subtitle">Все кексы</h3>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
