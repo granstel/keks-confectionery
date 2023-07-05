@@ -1,4 +1,6 @@
 export enum AppRoute {
   Main = '/',
-  Product = '/products/:id'
+  Product = '/products/:id',
+  Register = 'register',
+  Login = 'login'
 }
