@@ -15,7 +15,7 @@ export default function ReviewsList():JSX.Element {
                 <ul className="filter-sort__filter-list">
                   <li className="filter-sort__filter-item">
                     <div className="custom-toggle custom-toggle--sorting">
-                      <input type="radio" id="review-sort-1" name="review-sort" checked />
+                      <input type="radio" id="review-sort-1" name="review-sort" defaultChecked />
                       <label className="custom-toggle__label" htmlFor="review-sort-1">Любой</label>
                     </div>
                   </li>
@@ -82,8 +82,8 @@ export default function ReviewsList():JSX.Element {
                 </div>
                 <div className="review__image-wrapper">
                   <picture>
-                    <source type="image/webp" srcSet="img/content/review-1.webp, img/content/review-1@2x.webp 2x" />
-                    <img src="img/content/review-1.jpg" srcSet="img/content/review-1@2x.jpg 2x" width="162" height="162" alt="Кот" />
+                    <source type="image/webp" srcSet="/img/content/review-1.webp, /img/content/review-1@2x.webp 2x" />
+                    <img src="/img/content/review-1.jpg" srcSet="/img/content/review-1@2x.jpg 2x" width="162" height="162" alt="Кот" />
                   </picture>
                 </div>
               </div>
@@ -113,8 +113,8 @@ export default function ReviewsList():JSX.Element {
                 </div>
                 <div className="review__image-wrapper">
                   <picture>
-                    <source type="image/webp" srcSet="img/content/review-3.webp, img/content/review-3@2x.webp 2x" />
-                    <img src="img/content/review-3.jpg" srcSet="img/content/review-3@2x.jpg 2x" width="162" height="162" alt="Собакевич" />
+                    <source type="image/webp" srcSet="/img/content/review-3.webp, /img/content/review-3@2x.webp 2x" />
+                    <img src="/img/content/review-3.jpg" srcSet="/img/content/review-3@2x.jpg 2x" width="162" height="162" alt="Собакевич" />
                   </picture>
                 </div>
               </div>

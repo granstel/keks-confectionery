@@ -1,10 +1,14 @@
 import ReviewForm from '../../components/review-form/review-form';
 import ReviewsList from '../../components/reviews-list/reviews-list';
 import Footer from '../../components/footer/footer';
+import Header from '../../components/header/header';
+import BackLink from '../../components/back-link/back-link';
 
 export default function Product(): JSX.Element {
   return (
     <>
+      <Header />
+      <BackLink />
       <section className="item-details item-details--form-open">
         <div className="container">
           <div className="item-details__wrapper">
@@ -15,8 +19,8 @@ export default function Product(): JSX.Element {
             <div className="item-details__bottom-wrapper">
               <div className="item-details__image-wrapper">
                 <picture>
-                  <source type="image/webp" srcSet="img/content/lemon-pie.webp, img/content/lemon-pie@2x.webp 2x" />
-                  <img src="img/content/lemon-pie.jpg" srcSet="img/content/lemon-pie@2x.jpg 2x" width="241" height="245" alt="Чизкейк лимонный" />
+                  <source type="image/webp" srcSet="/img/content/lemon-pie.webp, /img/content/lemon-pie@2x.webp 2x" />
+                  <img src="/img/content/lemon-pie.jpg" srcSet="/img/content/lemon-pie@2x.jpg 2x" width="241" height="245" alt="Чизкейк лимонный" />
                 </picture><span className="item-details__label">Новинка</span>
               </div>
               <div className="item-details__review-wrapper">

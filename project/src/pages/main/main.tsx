@@ -11,7 +11,7 @@ export default function Main(): JSX.Element {
         <div className="hero">
           <div className="container">
             <div className="hero__img-wrapper">
-              <img className="hero__img" src="img/svg/hero-keks.svg" width="727" height="569" alt="Картика кота." />
+              <img className="hero__img" src="/img/svg/hero-keks.svg" width="727" height="569" alt="Картика кота." />
             </div>
             <div className="hero__wrapper">
               <p className="hero__subtitle">Твоя пушистая кондитерская</p>
@@ -74,7 +74,7 @@ export default function Main(): JSX.Element {
               </li>
               <li className="map__address">
                 <div className="custom-toggle custom-toggle--radio custom-toggle--address">
-                  <input type="radio" value="user-agreement-12" id="user-agreement-id-12" name="user-agreement" checked />
+                  <input type="radio" value="user-agreement-12" id="user-agreement-id-12" name="user-agreement" defaultChecked />
                   <label className="custom-toggle__label" htmlFor="user-agreement-id-12">Кондитерская 2</label>
                   <address className="custom-toggle__address">Морской пр. 2А
                     <svg className="custom-toggle__icon" width="26" height="24" aria-hidden="true">
