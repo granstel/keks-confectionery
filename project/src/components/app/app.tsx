@@ -4,6 +4,7 @@ import {AppRoute} from '../../const';
 import Product from '../../pages/Product/Product';
 import Register from '../../pages/register/register';
 import Login from '../../pages/login/login';
+import Catalog from '../../pages/catalog/catalog';
 
 function App(): JSX.Element {
   return (
@@ -12,6 +13,7 @@ function App(): JSX.Element {
       <Route path={AppRoute.Product} element={<Product />} />
       <Route path={AppRoute.Register} element={<Register />} />
       <Route path={AppRoute.Login} element={<Login />} />
+      <Route path={AppRoute.Catalog} element={<Catalog />} />
     </Routes>
   );
 
