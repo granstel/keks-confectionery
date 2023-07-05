@@ -1,4 +1,4 @@
-﻿export enum AppRoute {
+export enum AppRoute {
   Main = '/',
   Product = '/products/:id'
 }
