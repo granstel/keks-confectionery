@@ -1,5 +1,4 @@
 import Header from '../../components/header/header';
-import ProductCard from '../../components/product/product-card';
 import Review from '../../components/review/review';
 import Footer from '../../components/footer/footer';
 import { AppRoute } from '../../const';

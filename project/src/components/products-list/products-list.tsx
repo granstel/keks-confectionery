@@ -1,6 +1,6 @@
-﻿import ProductCard from "../product/product-card";
-import {Link} from "react-router-dom";
-import {AppRoute} from "../../const";
+import ProductCard from '../product/product-card';
+import {Link} from 'react-router-dom';
+import {AppRoute} from '../../const';
 
 export default function ProductsList():JSX.Element {
   return (
