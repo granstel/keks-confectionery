@@ -5,3 +5,7 @@ export enum AppRoute {
   Login = '/login',
   Catalog = '/catalog',
 }
+
+export enum APIRoute {
+  Products = '/v0/keks/products'
+}
