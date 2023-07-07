@@ -7,5 +7,5 @@ export enum AppRoute {
 }
 
 export enum APIRoute {
-  Products = '/v0/keks/products'
+  Products = '/products'
 }
