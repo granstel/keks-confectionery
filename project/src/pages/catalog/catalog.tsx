@@ -34,7 +34,7 @@ export default function Catalog(): JSX.Element {
           <div className="container">
             <h2 className="visually-hidden">Каталог</h2>
             <div className="catalog__wrapper">
-              <ProductsList classNamePrefix={ 'catalog' } showMore />
+              <ProductsList classNamePrefix={'catalog'} showMore bigCards />
             </div>
           </div>
         </section>
