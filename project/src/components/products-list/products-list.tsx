@@ -3,21 +3,22 @@ import ProductCard from '../product/product-card';
 type productsListProps = {
   classNamePrefix: string;
   showMore?: boolean;
+  bigCards?: boolean;
 }
 
 export default function ProductsList(props: React.PropsWithChildren<productsListProps>):JSX.Element {
-  const { classNamePrefix, children, showMore = false } = props;
+  const { classNamePrefix, children, bigCards, showMore = false } = props;
   return (
     <>
       <ul className={`${classNamePrefix}__list`}>
         <li className={`${classNamePrefix}__item`}>
-          <ProductCard />
+          <ProductCard bigCards={bigCards} />
         </li>
         <li className={`${classNamePrefix}__item`}>
-          <ProductCard />
+          <ProductCard bigCards={bigCards} />
         </li>
         <li className={`${classNamePrefix}__item`}>
-          <ProductCard />
+          <ProductCard bigCards={bigCards} />
         </li>
         {children}
       </ul>
