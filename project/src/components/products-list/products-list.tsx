@@ -18,7 +18,7 @@ export default function ProductsList(props: React.PropsWithChildren<productsList
   const isProductsLoading = useAppSelector((state) => state.isProductsLoading);
 
   return (
-    <Loader isShow={ isProductsLoading }>
+    <Loader isShowLoader={ isProductsLoading }>
       <ul className={`${classNamePrefix}__list`}>
         <li className={`${classNamePrefix}__item`}>
           <ProductCard bigCards={bigCards} />
