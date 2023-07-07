@@ -1,3 +1,5 @@
+import { store } from '../../store';
+import { loadProducts } from '../../store/api-actions';
 import ProductCard from '../product/product-card';
 
 type productsListProps = {
@@ -5,6 +7,8 @@ type productsListProps = {
   showMore?: boolean;
   bigCards?: boolean;
 }
+
+store.dispatch(loadProducts());
 
 export default function ProductsList(props: React.PropsWithChildren<productsListProps>):JSX.Element {
   const { classNamePrefix, children, bigCards, showMore = false } = props;
