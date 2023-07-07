@@ -2,10 +2,9 @@ import ProductCard from '../product/product-card';
 
 type productsListProps = {
   classNamePrefix: string,
-  children: JSX.Element | undefined;
 }
 
-export default function ProductsList(props: productsListProps):JSX.Element {
+export default function ProductsList(props: React.PropsWithChildren<productsListProps>):JSX.Element {
   const {classNamePrefix, children} = props;
   return (
     <ul className={`${classNamePrefix}__list`}>
@@ -18,7 +17,7 @@ export default function ProductsList(props: productsListProps):JSX.Element {
       <li className={`${classNamePrefix}__item`}>
         <ProductCard />
       </li>
-      {children ?? ''}
+      {children}
     </ul>
   );
 }
