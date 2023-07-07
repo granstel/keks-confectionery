@@ -4,10 +4,12 @@ import {productsLoaded} from './action';
 
 type State = {
   products: Products;
+  isProductsLoading: boolean;
 }
 
 const initialState: State = {
-  products: []
+  products: [],
+  isProductsLoading: false
 };
 
 export const reducer = createReducer(initialState, (builder) => {
