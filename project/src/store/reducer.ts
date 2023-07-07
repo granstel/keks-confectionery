@@ -1,12 +1,13 @@
 import {createReducer} from '@reduxjs/toolkit';
+import { Products } from '../types/product';
 import {productsLoaded} from './action';
 
 type State = {
-  products: undefined;
+  products: Products;
 }
 
 const initialState: State = {
-  products: undefined
+  products: []
 };
 
 export const reducer = createReducer(initialState, (builder) => {
