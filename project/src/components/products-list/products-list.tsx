@@ -23,9 +23,8 @@ export default function ProductsList(props: React.PropsWithChildren<productsList
   const products = useAppSelector((state) => state.products);
 
   const [slicedProducts, setSlicedProducts] = useState<Products>([]);
-
-  let showedProductsScreens = 1;
-  let isAllProductsShowed = false;
+  const [showedProductsScreens, setshowedProductsScreens] = useState<number>(1);
+  const [isAllProductsShowed, setIsAllProductsShowed] = useState<boolean>(false);
 
   useEffect(() => {
     if (isProductsLoading) {
@@ -33,16 +32,15 @@ export default function ProductsList(props: React.PropsWithChildren<productsList
     }
 
     if (products) {
-      setSlicedProducts(products.slice(0, oneScreenCount));
+      setSlicedProducts(products.slice(0, oneScreenCount * showedProductsScreens));
     }
-  }, [isProductsLoading, products]);
+  }, [isProductsLoading, products, showedProductsScreens]);
 
   function catalogButtonOnClickHandler(): void
   {
     if (!isAllProductsShowed) {
-      showedProductsScreens++;
-      isAllProductsShowed = slicedProducts.length === products.length;
-      setSlicedProducts(products.slice(0, oneScreenCount * showedProductsScreens));
+      setshowedProductsScreens(showedProductsScreens + 1);
+      setIsAllProductsShowed(slicedProducts.length === products.length);
     }
     else {
       scrollToTop();
