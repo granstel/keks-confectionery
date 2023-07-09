@@ -1,7 +1,7 @@
 import Header from '../../components/header/header';
 import Review from '../../components/review/review';
 import Footer from '../../components/footer/footer';
-import { AppRoute } from '../../const';
+import { AppRoute, Settings } from '../../const';
 import { Link } from 'react-router-dom';
 import ProductsList from '../../components/products-list/products-list';
 
@@ -29,7 +29,7 @@ export default function Main(): JSX.Element {
         <section className="random-main">
           <div className="container">
             <h2 className="random-main__title">кексы</h2>
-            <ProductsList classNamePrefix={'random-main'} oneScreenCount={3}>
+            <ProductsList classNamePrefix={'random-main'} oneScreenCount={Settings.MainProductsCount}>
               <li className="random-main__item">
                 <Link className="random-main__link" to={AppRoute.Catalog}>
                   <div className="random-main__icon-wrapper">
