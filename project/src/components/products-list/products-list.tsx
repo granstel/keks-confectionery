@@ -19,7 +19,16 @@ export default function ProductsList(props: React.PropsWithChildren<productsList
   const isProductsLoading = useAppSelector((state) => state.isProductsLoading);
   const products = useAppSelector((state) => state.products);
 
-  const slicedProducts = products.slice(0, oneScreenCount);
+  let slicedProducts = products.slice(0, oneScreenCount);
+  let showedProductsScreens = 1;
+  let isAllProductsShowed = false;
+  
+  function showMoreOnClick(): void
+  {
+    showedProductsScreens++;
+    slicedProducts = products.slice(0, oneScreenCount * showedProductsScreens);
+    isAllProductsShowed = slicedProducts.length == products.length;
+  }
 
   return (
     <Loader isShowLoader={ isProductsLoading }>
@@ -32,8 +41,8 @@ export default function ProductsList(props: React.PropsWithChildren<productsList
         {children}
       </ul>
       {showMore &&
-          <div className="catalog__button-wrapper">
-            <button className="btn btn--second" type="button">Показать еще</button>
+        <div className="catalog__button-wrapper" onClick={showMoreOnClick}>
+          <button className="btn btn--second" type="button">{isAllProductsShowed ? 'В начало' : 'Показать еще'}</button>
           </div>}
     </Loader>
   );
