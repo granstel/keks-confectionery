@@ -29,6 +29,5 @@ export const reducer = createReducer(initialState, (builder) => {
     })
     .addCase(productLoaded, (state, action) => {
       state.product = action.payload;
-    })
-    ;
+    });
 });
