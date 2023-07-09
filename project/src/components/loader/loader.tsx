@@ -10,7 +10,7 @@ export default function Loader({ children, isShowLoader = false }: React.PropsWi
         <div className="container" style={{ justifyContent: 'center', display: 'inline-flex' }}>
           <div className="loader"></div>
         </div>}
-      {!!isShowLoader && children}
+      {!isShowLoader && children}
     </>
   );
 }
