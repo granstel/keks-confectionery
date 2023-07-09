@@ -1,4 +1,5 @@
 import { useAppSelector } from '../../hooks';
+import { scrollToTop } from '../../hooks/use-scroll-to-top';
 import { store } from '../../store';
 import { loadProducts } from '../../store/api-actions';
 import Loader from '../loader/loader';
@@ -22,12 +23,17 @@ export default function ProductsList(props: React.PropsWithChildren<productsList
   let slicedProducts = products.slice(0, oneScreenCount);
   let showedProductsScreens = 1;
   let isAllProductsShowed = false;
-  
-  function showMoreOnClick(): void
+
+  function catalogButtonOnClickHandler(): void
   {
-    showedProductsScreens++;
-    slicedProducts = products.slice(0, oneScreenCount * showedProductsScreens);
-    isAllProductsShowed = slicedProducts.length == products.length;
+    if (!isAllProductsShowed) {
+      showedProductsScreens++;
+      slicedProducts = products.slice(0, oneScreenCount * showedProductsScreens);
+      isAllProductsShowed = slicedProducts.length === products.length;
+    }
+    else {
+      scrollToTop();
+    }
   }
 
   return (
@@ -41,9 +47,9 @@ export default function ProductsList(props: React.PropsWithChildren<productsList
         {children}
       </ul>
       {showMore &&
-        <div className="catalog__button-wrapper" onClick={showMoreOnClick}>
+        <div className="catalog__button-wrapper" onClick={catalogButtonOnClickHandler}>
           <button className="btn btn--second" type="button">{isAllProductsShowed ? 'В начало' : 'Показать еще'}</button>
-          </div>}
+        </div>}
     </Loader>
   );
 }
