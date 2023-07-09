@@ -9,10 +9,10 @@ export type Product = {
   isFavorite: boolean;
   isNew: boolean;
   description?: string;
-  images?: string[],
-  weight?: number,
-  rating?: number,
-  reviewCount?: number
+  images?: string[];
+  weight?: number;
+  rating?: number;
+  reviewCount?: number;
 };
 
 export type Products = Product[];
