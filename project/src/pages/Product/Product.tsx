@@ -36,7 +36,7 @@ export default function Product(): JSX.Element {
 
     for (let i = 0; i < rating; i++) {
       result.push(
-        <svg className="star-rating__star star-rating__star--active" width="30" height="30" aria-hidden="true">
+        <svg className="star-rating__star star-rating__star--active" width="30" height="30" aria-hidden="true" key={i}>
           <use xlinkHref="#icon-star"></use>
         </svg>
       );
@@ -53,7 +53,7 @@ export default function Product(): JSX.Element {
       return description;
     }
 
-    return description.slice(0, 140)
+    return description.slice(0, 140);
   }
 
   function moreButtonClickHandler(): void {
@@ -89,12 +89,15 @@ export default function Product(): JSX.Element {
                 </div>
                 <div className="item-details__text-wrapper">
                   <span className="item-details__text">{showDescription(product?.description)}</span>
-                  <button className="item-details__more" onClick={moreButtonClickHandler}>
-                    <span className="visually-hidden">Читать полностью</span>
-                    <svg width="27" height="17" aria-hidden="true">
-                      <use xlinkHref="#icon-more"></use>
-                    </svg>
-                  </button>
+                  {
+                    (product?.description?.length ?? 0) > 140 && !isShowFullDescription &&
+                    <button className="item-details__more" onClick={moreButtonClickHandler}>
+                      <span className="visually-hidden">Читать полностью</span>
+                      <svg width="27" height="17" aria-hidden="true">
+                        <use xlinkHref="#icon-more"></use>
+                      </svg>
+                    </button>
+                  }
                 </div>
                 <div className="item-details__button-wrapper">
                   <button className="item-details__like-button">
