@@ -4,13 +4,15 @@ import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
 import BackLink from '../../components/back-link/back-link';
 import { useParams } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { store } from '../../store';
 import { loadProduct } from '../../store/api-actions';
 import { useAppSelector } from '../../hooks';
 
 export default function Product(): JSX.Element {
   const { id } = useParams();
+
+  const [isShowFullDescription, setIsShowFullDescription] = useState<boolean>(false);
 
   const isProductLoading = useAppSelector((state) => state.isProductLoading);
   const product = useAppSelector((state) => state.product);
@@ -42,6 +44,21 @@ export default function Product(): JSX.Element {
     return result;
   }
 
+  function showDescription(description: string | undefined): string {
+    if (!description) {
+      return '';
+    }
+
+    if (isShowFullDescription) {
+      return description;
+    }
+
+    return description.slice(0, 140)
+  }
+
+  function moreButtonClickHandler(): void {
+    setIsShowFullDescription(true);
+  }
 
   return (
     <>
@@ -71,8 +88,9 @@ export default function Product(): JSX.Element {
                   <span className="star-rating__count">{product?.reviewCount}</span>
                 </div>
                 <div className="item-details__text-wrapper">
-                  <span className="item-details__text">{product?.description?.slice(0, 140)}</span>
-                  <button className="item-details__more"><span className="visually-hidden">Читать полностью</span>
+                  <span className="item-details__text">{showDescription(product?.description)}</span>
+                  <button className="item-details__more" onClick={moreButtonClickHandler}>
+                    <span className="visually-hidden">Читать полностью</span>
                     <svg width="27" height="17" aria-hidden="true">
                       <use xlinkHref="#icon-more"></use>
                     </svg>
@@ -82,9 +100,10 @@ export default function Product(): JSX.Element {
                   <button className="item-details__like-button">
                     <svg width="45" height="37" aria-hidden="true">
                       <use xlinkHref="#icon-like"></use>
-                    </svg><span className="visually-hidden">Понравилось</span>
+                    </svg>
+                    <span className="visually-hidden">Понравилось</span>
                   </button>
-                  <button className="btn btn--second" type="button">Отменить отзыв</button>
+                  <button className="btn btn--second" type="button">Оставить отзыв</button>
                 </div>
               </div>
             </div>
