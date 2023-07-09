@@ -22,7 +22,7 @@ export default function ProductsList(props: React.PropsWithChildren<productsList
   const isProductsLoading = useAppSelector((state) => state.isProductsLoading);
   const products = useAppSelector((state) => state.products);
 
-  const [slicedProducts, setSlicedProducts] = useState<Products>([]);
+  const [slicedProductsState, setSlicedProducts] = useState<Products>([]);
   const [showedProductsScreens, setshowedProductsScreens] = useState<number>(1);
   const [isAllProductsShowed, setIsAllProductsShowed] = useState<boolean>(false);
 
@@ -32,15 +32,17 @@ export default function ProductsList(props: React.PropsWithChildren<productsList
     }
 
     if (products) {
-      setSlicedProducts(products.slice(0, oneScreenCount * showedProductsScreens));
+      const slicedProducts = products.slice(0, oneScreenCount * showedProductsScreens);
+
+      setSlicedProducts(slicedProducts);
+      setIsAllProductsShowed(slicedProducts.length === products.length);
     }
-  }, [isProductsLoading, products, showedProductsScreens]);
+  }, [isProductsLoading, products, oneScreenCount, showedProductsScreens, isAllProductsShowed]);
 
   function catalogButtonOnClickHandler(): void
   {
     if (!isAllProductsShowed) {
       setshowedProductsScreens(showedProductsScreens + 1);
-      setIsAllProductsShowed(slicedProducts.length === products.length);
     }
     else {
       scrollToTop();
@@ -50,7 +52,7 @@ export default function ProductsList(props: React.PropsWithChildren<productsList
   return (
     <Loader isShowLoader={ isProductsLoading }>
       <ul className={`${classNamePrefix}__list`}>
-        {slicedProducts.map((p) =>
+        {slicedProductsState.map((p) =>
           (
             <li className={`${classNamePrefix}__item`} key={p.id}>
               <ProductCard bigCard={bigCards} product={p} />
