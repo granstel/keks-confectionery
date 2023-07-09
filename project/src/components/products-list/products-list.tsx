@@ -25,9 +25,10 @@ export default function ProductsList(props: React.PropsWithChildren<productsList
     <Loader isShowLoader={ isProductsLoading }>
       <ul className={`${classNamePrefix}__list`}>
         {slicedProducts.map((p) =>
-          (<li className={`${classNamePrefix}__item`} key={p.id}>
-            <ProductCard bigCard={bigCards} product={p} />
-           </li>))}
+          (
+            <li className={`${classNamePrefix}__item`} key={p.id}>
+              <ProductCard bigCard={bigCards} product={p} />
+            </li>))}
         {children}
       </ul>
       {showMore &&
