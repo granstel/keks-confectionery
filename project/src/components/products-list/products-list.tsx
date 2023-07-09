@@ -8,27 +8,26 @@ type productsListProps = {
   classNamePrefix: string;
   showMore?: boolean;
   bigCards?: boolean;
+  oneScreenCount: number;
 }
 
 store.dispatch(loadProducts());
 
 export default function ProductsList(props: React.PropsWithChildren<productsListProps>):JSX.Element {
-  const { classNamePrefix, children, bigCards, showMore = false } = props;
+  const { classNamePrefix, children, bigCards, oneScreenCount, showMore = false } = props;
 
   const isProductsLoading = useAppSelector((state) => state.isProductsLoading);
+  const products = useAppSelector((state) => state.products);
+
+  const slicedProducts = products.slice(0, oneScreenCount);
 
   return (
     <Loader isShowLoader={ isProductsLoading }>
       <ul className={`${classNamePrefix}__list`}>
-        <li className={`${classNamePrefix}__item`}>
-          <ProductCard bigCards={bigCards} />
-        </li>
-        <li className={`${classNamePrefix}__item`}>
-          <ProductCard bigCards={bigCards} />
-        </li>
-        <li className={`${classNamePrefix}__item`}>
-          <ProductCard bigCards={bigCards} />
-        </li>
+        {slicedProducts.map((p) =>
+          (<li className={`${classNamePrefix}__item`} key={p.id}>
+            <ProductCard bigCard={bigCards} product={p} />
+           </li>))}
         {children}
       </ul>
       {showMore &&
