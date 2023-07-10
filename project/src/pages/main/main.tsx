@@ -1,9 +1,9 @@
 import Header from '../../components/header/header';
-import ProductCard from '../../components/product/product-card';
 import Review from '../../components/review/review';
 import Footer from '../../components/footer/footer';
-import { AppRoute } from '../../const';
+import { AppRoute, Settings } from '../../const';
 import { Link } from 'react-router-dom';
+import ProductsList from '../../components/products-list/products-list';
 
 export default function Main(): JSX.Element {
   return (
@@ -29,16 +29,7 @@ export default function Main(): JSX.Element {
         <section className="random-main">
           <div className="container">
             <h2 className="random-main__title">кексы</h2>
-            <ul className="random-main__list">
-              <li className="random-main__item">
-                <ProductCard />
-              </li>
-              <li className="random-main__item">
-                <ProductCard />
-              </li>
-              <li className="random-main__item">
-                <ProductCard />
-              </li>
+            <ProductsList classNamePrefix={'random-main'} oneScreenCount={Settings.MainProductsCount}>
               <li className="random-main__item">
                 <Link className="random-main__link" to={AppRoute.Catalog}>
                   <div className="random-main__icon-wrapper">
@@ -51,7 +42,7 @@ export default function Main(): JSX.Element {
                   <h3 className="random-main__subtitle">Все кексы</h3>
                 </Link>
               </li>
-            </ul>
+            </ProductsList>
           </div>
         </section>
         <section className="last-review">

@@ -1,7 +1,8 @@
 import BackLink from '../../components/back-link/back-link';
 import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
-import ProductCard from '../../components/product/product-card';
+import ProductsList from '../../components/products-list/products-list';
+import { Settings } from '../../const';
 
 export default function Catalog(): JSX.Element {
   return (
@@ -34,29 +35,7 @@ export default function Catalog(): JSX.Element {
           <div className="container">
             <h2 className="visually-hidden">Каталог</h2>
             <div className="catalog__wrapper">
-              <ul className="catalog__list">
-                <li className="catalog__item">
-                  <ProductCard />
-                </li>
-                <li className="catalog__item">
-                  <ProductCard />
-                </li>
-                <li className="catalog__item">
-                  <ProductCard />
-                </li>
-                <li className="catalog__item">
-                  <ProductCard />
-                </li>
-                <li className="catalog__item">
-                  <ProductCard />
-                </li>
-                <li className="catalog__item">
-                  <ProductCard />
-                </li>
-              </ul>
-              <div className="catalog__button-wrapper">
-                <button className="btn btn--second" type="button">Показать еще</button>
-              </div>
+              <ProductsList classNamePrefix={'catalog'} oneScreenCount={Settings.CatalogOneScreenProductsCount} showMore bigCards />
             </div>
           </div>
         </section>
