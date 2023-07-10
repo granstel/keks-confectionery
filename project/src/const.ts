@@ -1,6 +1,7 @@
 export enum Settings {
   MainProductsCount = 3,
-  CatalogOneScreenProductsCount = 6
+  CatalogOneScreenProductsCount = 6,
+  SplitDescriptionOver = 140
 }
 
 export enum AppRoute {

@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import { store } from '../../store';
 import { loadProduct } from '../../store/api-actions';
 import { useAppSelector } from '../../hooks';
+import { Settings } from '../../const';
 
 export default function Product(): JSX.Element {
   const { id } = useParams();
@@ -53,7 +54,7 @@ export default function Product(): JSX.Element {
       return description;
     }
 
-    return description.slice(0, 140);
+    return description.slice(0, Settings.SplitDescriptionOver);
   }
 
   function moreButtonClickHandler(): void {
@@ -90,7 +91,7 @@ export default function Product(): JSX.Element {
                 <div className="item-details__text-wrapper">
                   <span className="item-details__text">{showDescription(product?.description)}</span>
                   {
-                    (product?.description?.length ?? 0) > 140 && !isShowFullDescription &&
+                    (product?.description?.length ?? 0) > Settings.SplitDescriptionOver && !isShowFullDescription &&
                     <button className="item-details__more" onClick={moreButtonClickHandler}>
                       <span className="visually-hidden">Читать полностью</span>
                       <svg width="27" height="17" aria-hidden="true">
